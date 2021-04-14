@@ -1,6 +1,11 @@
 
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+import 'package:ecommerce_app/Admin/Health/Energy.dart';
+import 'package:ecommerce_app/Admin/Health/Healthdrinks.dart';
+import 'package:ecommerce_app/Admin/Health/Tea.dart';
 import 'package:ecommerce_app/Admin/Health/cof.dart';
+import 'package:ecommerce_app/Admin/Health/fruitdrinks.dart';
+import 'package:ecommerce_app/Admin/Health/water.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
@@ -42,31 +47,46 @@ class health extends StatelessWidget {
             ListTile(
               title: Text("Energy & Soft drinks"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => energy()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Water"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => water()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Tea"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => tea()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Health Drink & Supplement"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => healthdrinks()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Fruit Drinks & Juices"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => fruitjuices()));
+              },
             ),
           ],
         ),
