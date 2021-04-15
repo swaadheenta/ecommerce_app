@@ -26,14 +26,6 @@ class health extends StatelessWidget {
         padding: EdgeInsets.only(top: 30),
         child: ListView(
           children: <Widget>[
-            ListTile(
-              title: Text("All Beverages"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => fv()));
-              },
-            ),
             Divider(),
             ListTile(
               title: Text("Coffee"),
@@ -79,15 +71,7 @@ class health extends StatelessWidget {
                     context, MaterialPageRoute(builder: (context) => healthdrinks()));
               },
             ),
-            Divider(),
-            ListTile(
-              title: Text("Fruit Drinks & Juices"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => fruitjuices()));
-              },
-            ),
+           
           ],
         ),
       ),

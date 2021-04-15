@@ -60,7 +60,7 @@ class _teaState extends State<tea> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ['Leaf & Dust Tea', 'Green Tea','Exotic & Flavoured Tea','Tea Bags'].map(
+                      items: ['Leaf & Dust Tea', 'Green Tea','Exotic & Flavoured Tea'].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,

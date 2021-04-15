@@ -60,7 +60,7 @@ class _waterState extends State<water> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ['Packaged Water', 'Spring Water','Flavoured Water'].map(
+                      items: ['Packaged Water', 'Spring Water',].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
