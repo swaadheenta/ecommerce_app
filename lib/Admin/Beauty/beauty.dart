@@ -46,24 +46,14 @@ class beauty extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
               onTap: () {},
             ),
-            Divider(),
-            ListTile(
-              title: Text("Health & Medicine"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+           
             Divider(),
             ListTile(
               title: Text("Hair Care"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {},
             ),
-            Divider(),
-            ListTile(
-              title: Text("Men's Grooming"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+            
             Divider(),
             ListTile(
               title: Text("Fragrances & Deos"),

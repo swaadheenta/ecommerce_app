@@ -1,4 +1,8 @@
 
+import 'package:ecommerce_app/Admin/Cleaning/Cars.dart';
+import 'package:ecommerce_app/Admin/Cleaning/Detergents.dart';
+import 'package:ecommerce_app/Admin/Cleaning/Freshners.dart';
+import 'package:ecommerce_app/Admin/Cleaning/Mops.dart';
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
@@ -25,38 +29,37 @@ class cleaning extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => fv()));
+                    context, MaterialPageRoute(builder: (context) => Detergents()));
               },
             ),
-            Divider(),
-            ListTile(
-              title: Text("Disposables,Garbage bag"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+           
             Divider(),
             ListTile(
               title: Text("Freshners & Repellents"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Freshners()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Mops,Brushes & Scrubs"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Mops()));
+              },
             ),
-            Divider(),
-            ListTile(
-              title: Text("Pooja needs"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+            
             Divider(),
             ListTile(
               title: Text("Car & Shoe Care"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Car()));
+              },
             ),
           ],
         ),

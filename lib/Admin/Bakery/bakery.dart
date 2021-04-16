@@ -28,30 +28,14 @@ class bakery extends StatelessWidget {
                     context, MaterialPageRoute(builder: (context) => fv()));
               },
             ),
-            Divider(),
-            ListTile(
-              title: Text("Non Dairy"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+           
             Divider(),
             ListTile(
               title: Text("Breads & Buns"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {},
             ),
-            Divider(),
-            ListTile(
-              title: Text("Cookies,Rusk & Khari"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Cakes & Pastries"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+           
             Divider(),
             ListTile(
               title: Text("Icecreams & Desserts"),
