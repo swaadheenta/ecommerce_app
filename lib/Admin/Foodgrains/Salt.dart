@@ -100,7 +100,7 @@ class _SaltState extends State<Salt> {
                 TextFormField(
                   controller: SubCategoryoldpSalt,
                   decoration: InputDecoration(
-                    hintText: "Enter the old pSalt of subcategory",
+                    hintText: "Enter the old price of subcategory",
                   ),
                 ),
                 SizedBox(
@@ -109,7 +109,7 @@ class _SaltState extends State<Salt> {
                 TextFormField(
                   controller: SubCategorynewpSalt,
                   decoration: InputDecoration(
-                    hintText: "Enter the new pSalt of subcategory",
+                    hintText: "Enter the new price of subcategory",
                   ),
                 ),
                 SizedBox(
@@ -147,8 +147,8 @@ class _SaltState extends State<Salt> {
                       Map<String, dynamic> data = {
                         "name": SubCategoryname.text,
                         "quantity": SubCategoryquantity.text,
-                        "oldpSalt": SubCategoryoldpSalt.text,
-                        "newpSalt":SubCategorynewpSalt.text,
+                        "oldprice": SubCategoryoldpSalt.text,
+                        "newpprice":SubCategorynewpSalt.text,
                         "imgname": Imgname,
                         "imgloc": Imgloc,
                       };
