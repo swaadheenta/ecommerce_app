@@ -26,7 +26,7 @@ class health extends StatelessWidget {
         padding: EdgeInsets.only(top: 30),
         child: ListView(
           children: <Widget>[
-            Divider(),
+          
             ListTile(
               title: Text("Coffee"),
               trailing: Icon(Icons.arrow_right),
