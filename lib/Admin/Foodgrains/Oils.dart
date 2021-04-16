@@ -16,8 +16,8 @@ class Oil extends StatefulWidget {
 
 class _OilState extends State<Oil> {
   TextEditingController SubCategoryname = new TextEditingController();
-  TextEditingController SubCategoryoldpOil = new TextEditingController();
-  TextEditingController SubCategorynewpOil = new TextEditingController();
+  TextEditingController SubCategoryoldprice = new TextEditingController();
+  TextEditingController SubCategorynewprice = new TextEditingController();
   TextEditingController SubCategoryquantity = new TextEditingController();
   String Imgname;
   String Imgloc;
@@ -60,7 +60,7 @@ class _OilState extends State<Oil> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Soya & Mustard Oils", "Groudnut Oils","Other Edible Oils"].map(
+                      items: ["Soya & Mustard Oils","Other Edible Oils"].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
@@ -98,18 +98,18 @@ class _OilState extends State<Oil> {
                   height: displayHeight(context) * 0.02,
                 ),
                 TextFormField(
-                  controller: SubCategoryoldpOil,
+                  controller: SubCategoryoldprice,
                   decoration: InputDecoration(
-                    hintText: "Enter the old pOil of subcategory",
+                    hintText: "Enter the old price of subcategory",
                   ),
                 ),
                 SizedBox(
                   height: displayHeight(context) * 0.05,
                 ),
                 TextFormField(
-                  controller: SubCategorynewpOil,
+                  controller: SubCategorynewprice,
                   decoration: InputDecoration(
-                    hintText: "Enter the new pOil of subcategory",
+                    hintText: "Enter the new price of subcategory",
                   ),
                 ),
                 SizedBox(
@@ -147,8 +147,8 @@ class _OilState extends State<Oil> {
                       Map<String, dynamic> data = {
                         "name": SubCategoryname.text,
                         "quantity": SubCategoryquantity.text,
-                        "oldpOil": SubCategoryoldpOil.text,
-                        "newpOil":SubCategorynewpOil.text,
+                        "oldprice": SubCategoryoldprice.text,
+                        "newprice":SubCategorynewprice.text,
                         "imgname": Imgname,
                         "imgloc": Imgloc,
                       };

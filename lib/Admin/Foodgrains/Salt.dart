@@ -16,8 +16,8 @@ class Salt extends StatefulWidget {
 
 class _SaltState extends State<Salt> {
   TextEditingController SubCategoryname = new TextEditingController();
-  TextEditingController SubCategoryoldpSalt = new TextEditingController();
-  TextEditingController SubCategorynewpSalt = new TextEditingController();
+  TextEditingController SubCategoryoldprice = new TextEditingController();
+  TextEditingController SubCategorynewprice = new TextEditingController();
   TextEditingController SubCategoryquantity = new TextEditingController();
   String Imgname;
   String Imgloc;
@@ -98,7 +98,7 @@ class _SaltState extends State<Salt> {
                   height: displayHeight(context) * 0.02,
                 ),
                 TextFormField(
-                  controller: SubCategoryoldpSalt,
+                  controller: SubCategoryoldprice,
                   decoration: InputDecoration(
                     hintText: "Enter the old price of subcategory",
                   ),
@@ -107,7 +107,7 @@ class _SaltState extends State<Salt> {
                   height: displayHeight(context) * 0.05,
                 ),
                 TextFormField(
-                  controller: SubCategorynewpSalt,
+                  controller: SubCategorynewprice,
                   decoration: InputDecoration(
                     hintText: "Enter the new price of subcategory",
                   ),
@@ -147,8 +147,8 @@ class _SaltState extends State<Salt> {
                       Map<String, dynamic> data = {
                         "name": SubCategoryname.text,
                         "quantity": SubCategoryquantity.text,
-                        "oldprice": SubCategoryoldpSalt.text,
-                        "newpprice":SubCategorynewpSalt.text,
+                        "oldprice": SubCategoryoldprice.text,
+                        "newprice":SubCategorynewprice.text,
                         "imgname": Imgname,
                         "imgloc": Imgloc,
                       };
