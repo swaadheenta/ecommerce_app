@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class Atta extends StatefulWidget {
+class Dairy extends StatefulWidget {
   @override
-  _AttaState createState() => _AttaState();
+  _DairyState createState() => _DairyState();
 }
 
-class _AttaState extends State<Atta> {
+class _DairyState extends State<Dairy> {
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();
@@ -60,7 +60,7 @@ class _AttaState extends State<Atta> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Sooji, Maida & Besan", "Atta Whole Wheat", "Rice & Other Flours"].map(
+                      items: ["Milk & Curd", "Paneer,Tofu & Cream", "Cheese & Butter"].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,

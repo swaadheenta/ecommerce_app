@@ -1,5 +1,8 @@
+import 'package:ecommerce_app/Admin/Bakery/Icecream.dart';
+import 'package:ecommerce_app/Admin/Bakery/cakes.dart';
+import 'package:ecommerce_app/Admin/Bakery/bread.dart';
+import 'package:ecommerce_app/Admin/Bakery/dairy.dart';
 
-import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +28,7 @@ class bakery extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => fv()));
+                    context, MaterialPageRoute(builder: (context) => Dairy()));
               },
             ),
            
@@ -33,20 +36,29 @@ class bakery extends StatelessWidget {
             ListTile(
               title: Text("Breads & Buns"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => bread()));
+              },
             ),
            
             Divider(),
             ListTile(
               title: Text("Icecreams & Desserts"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) =>Icecream() ));
+              },
             ),
             Divider(),
             ListTile(
-              title: Text("Bakery Snacks"),
+              title: Text("Cakes & Pastries"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => cakes()));
+              },
             ),
           ],
         ),

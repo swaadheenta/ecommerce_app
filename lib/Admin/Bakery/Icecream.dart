@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class Atta extends StatefulWidget {
+class Icecream extends StatefulWidget {
   @override
-  _AttaState createState() => _AttaState();
+  _IcecreamState createState() => _IcecreamState();
 }
 
-class _AttaState extends State<Atta> {
+class _IcecreamState extends State<Icecream> {
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();

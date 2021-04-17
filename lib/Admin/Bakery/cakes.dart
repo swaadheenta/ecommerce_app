@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class bakerysnacks extends StatefulWidget {
+class cakes extends StatefulWidget {
   @override
-  _bakerysnacksState createState() => _bakerysnacksState();
+  _cakesState createState() => _cakesState();
 }
 
-class _bakerysnacksState extends State<bakerysnacks> {
+class _cakesState extends State<cakes> {
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();
@@ -60,7 +60,7 @@ class _bakerysnacksState extends State<bakerysnacks> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Cheese & Garlic Bread", "Bread Sticks & Lavash"].map(
+                      items: ["Tea Cakes & Slice Cakes", "Pastries & Brownies"].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
