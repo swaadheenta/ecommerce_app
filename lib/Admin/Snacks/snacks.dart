@@ -1,5 +1,10 @@
 
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+import 'package:ecommerce_app/Admin/Snacks/biscuits.dart';
+import 'package:ecommerce_app/Admin/Snacks/namkeen.dart';
+import 'package:ecommerce_app/Admin/Snacks/noodles.dart';
+import 'package:ecommerce_app/Admin/Snacks/pickles.dart';
+import 'package:ecommerce_app/Admin/Snacks/sauces.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
@@ -21,36 +26,50 @@ class snacks extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text("Chocolates & Candies"),
+              title: Text("Chocolates & Biscuits"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => fv()));
+                    context, MaterialPageRoute(builder: (context) => biscuits()));
               },
             ),
+           
+           
             Divider(),
             ListTile(
-              title: Text("Biscuits & Cookies"),
+              title: Text("Spreads, Sauces & Ketchup"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Indian Mithai"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              title: Text("Spreads,Sauces & Ketchup"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => sauces()));
+              },
             ),
             Divider(),
             ListTile(
               title: Text("Snacks & Namkeen"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => namkeen()));
+              },
+            ),
+             Divider(),
+            ListTile(
+              title: Text("Noodles, Pasta & Vermicilli"),
+              trailing: Icon(Icons.arrow_right),
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => noodles()));
+              },
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Pickles & Chutneys"),
+              trailing: Icon(Icons.arrow_right),
+              onTap: () {
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => pickles()));
+              },
             ),
           ],
         ),

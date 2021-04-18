@@ -9,12 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class Mops extends StatefulWidget {
+class noodles extends StatefulWidget {
   @override
-  _MopsState createState() => _MopsState();
+  _noodlesState createState() => _noodlesState();
 }
 
-class _MopsState extends State<Mops> {
+class _noodlesState extends State<noodles> {
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();
@@ -60,7 +60,7 @@ class _MopsState extends State<Mops> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Mops, wipers", "Scrubs & Brushes"].map(
+                      items: ['Noodles', 'Pasta & Vermicilli'].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
@@ -222,16 +222,3 @@ class _MopsState extends State<Mops> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
