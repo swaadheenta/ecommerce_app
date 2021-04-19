@@ -1,7 +1,7 @@
 
 import 'package:ecommerce_app/Admin/Fruits/Freshfruits.dart';
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
-import 'package:ecommerce_app/Admin/Fruits/sprouts.dart';
+
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
@@ -42,16 +42,7 @@ class fnv extends StatelessWidget {
               },
             ),
          
-            Divider(),
-            ListTile(
-              // leading: Icon(Icons.category),
-              title: Text("Cuts & Sprouts"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => sprouts()));
-              },
-            ),
+           
             
           ],
         ),

@@ -60,7 +60,7 @@ class _ffState extends State<ff> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Fruits", ].map(
+                      items: ["Apples,Banana & Pomegranate","Melon, Papaya & Citrus Fruits", ].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
