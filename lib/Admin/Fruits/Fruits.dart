@@ -1,5 +1,7 @@
 
+import 'package:ecommerce_app/Admin/Fruits/Freshfruits.dart';
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+import 'package:ecommerce_app/Admin/Fruits/sprouts.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
@@ -28,48 +30,29 @@ class fnv extends StatelessWidget {
                     context, MaterialPageRoute(builder: (context) => fv()));
               },
             ),
-            Divider(),
-            ListTile(
-              //leading: Icon(Icons.library_books_rounded),
-              title: Text("Herbs & Seasonings"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+            
             Divider(),
             ListTile(
               // leading: Icon(Icons.add_circle),
               title: Text("Fresh Fruits"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ff()));
+              },
             ),
-            Divider(),
-            ListTile(
-              // leading: Icon(Icons.category),
-              title: Text("Exotic Fruits & veggies"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              //leading: Icon(Icons.category),
-              title: Text("Organic Fruits & Vegetables"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+         
             Divider(),
             ListTile(
               // leading: Icon(Icons.category),
               title: Text("Cuts & Sprouts"),
               trailing: Icon(Icons.arrow_right),
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => sprouts()));
+              },
             ),
-            Divider(),
-            ListTile(
-              // leading: Icon(Icons.category),
-              title: Text("Flowers Bouquets & Bunches"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {},
-            ),
+            
           ],
         ),
       ),

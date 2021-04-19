@@ -9,14 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class fv extends StatefulWidget {
+class sprouts extends StatefulWidget {
   @override
-  _fvState createState() => _fvState();
+  _sproutsState createState() => _sproutsState();
 }
 
-class _fvState extends State<fv> {
+class _sproutsState extends State<sprouts> {
   TextEditingController SubCategoryname = new TextEditingController();
-  TextEditingController SubCategoryprice = new TextEditingController();
+  TextEditingController SubCategoryoldprice = new TextEditingController();
+  TextEditingController SubCategorynewprice = new TextEditingController();
   TextEditingController SubCategoryquantity = new TextEditingController();
   String Imgname;
   String Imgloc;
@@ -59,7 +60,7 @@ class _fvState extends State<fv> {
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.blue),
-                      items: ["Potato, Onion & Tomato", "Ladyfinger, Cabbage & Cauliflower", "Leafy Vegetables", "Other"].map(
+                      items: ["Cut & Peeled Veggies", "Fresh Salad & Sprouts"].map(
                         (val) {
                           return DropdownMenuItem<String>(
                             value: val,
@@ -97,9 +98,18 @@ class _fvState extends State<fv> {
                   height: displayHeight(context) * 0.02,
                 ),
                 TextFormField(
-                  controller: SubCategoryprice,
+                  controller: SubCategoryoldprice,
                   decoration: InputDecoration(
-                    hintText: "Enter the price of subcategory",
+                    hintText: "Enter the old price of subcategory",
+                  ),
+                ),
+                SizedBox(
+                  height: displayHeight(context) * 0.05,
+                ),
+                TextFormField(
+                  controller: SubCategorynewprice,
+                  decoration: InputDecoration(
+                    hintText: "Enter the new price of subcategory",
                   ),
                 ),
                 SizedBox(
@@ -135,11 +145,12 @@ class _fvState extends State<fv> {
                     color: Colors.blue,
                     onPressed: () {
                       Map<String, dynamic> data = {
-                        "field1": SubCategoryname.text,
-                        "field2": SubCategoryquantity.text,
-                        "field3": SubCategoryprice.text,
-                        "field4": Imgname,
-                        "field5": Imgloc,
+                        "name": SubCategoryname.text,
+                        "quantity": SubCategoryquantity.text,
+                        "oldprice": SubCategoryoldprice.text,
+                        "newprice":SubCategorynewprice.text,
+                        "imgname": Imgname,
+                        "imgloc": Imgloc,
                       };
 
                       //FirebaseFirestore.instance.collection("test").add(data);
@@ -210,3 +221,4 @@ class _fvState extends State<fv> {
     Imgloc = url;
   }
 }
+
