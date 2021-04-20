@@ -5,7 +5,8 @@ import 'package:ecommerce_app/Admin/Cleaning/cleaning.dart';
 import 'package:ecommerce_app/Admin/Foodgrains/foodgrains.dart';
 import 'package:ecommerce_app/Admin/Fruits/Fruits.dart';
 import 'package:ecommerce_app/Admin/Health/Health.dart';
-import 'package:ecommerce_app/Admin/Instant/Instant.dart';
+import 'package:ecommerce_app/Admin/Kitchen/Kitchen.dart';
+
 import 'package:ecommerce_app/Admin/Snacks/snacks.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'Babycare/Babycare.dart';
@@ -48,7 +49,7 @@ class adminhome extends StatelessWidget {
                 top: displayHeight(context) * 0.02,
                 left: displayWidth(context) * 0.02,
                 child: Container(
-                  height: displayHeight(context) * 0.8,
+                  height: displayHeight(context) * 0.769,
                   child: SingleChildScrollView(
                     child: Column(children: [
                       GestureDetector(
@@ -97,7 +98,7 @@ class adminhome extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Instant()));
+                                  builder: (context) => Kitchen()));
                         },
                         child: Container(
                             height: displayHeight(context) * 0.12,
@@ -112,13 +113,13 @@ class adminhome extends StatelessWidget {
                                     left: displayWidth(context) * 0.02,
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
-                                      child: Image.asset("images/img2.jpg"),
+                                      child: Image.asset("images/img14.jpeg"),
                                       radius: displayWidth(context) * 0.1,
                                     )),
                                 Positioned(
                                     left: displayWidth(context) * 0.3,
                                     child: Text(
-                                      "Instant & Ready Foods",
+                                      "Kitchen Appliances",
                                       style: TextStyle(
                                         fontFamily: "Breeserif",
                                         fontSize: displayWidth(context) * 0.045,

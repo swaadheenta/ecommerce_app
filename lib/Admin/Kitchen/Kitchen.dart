@@ -1,16 +1,17 @@
 
-import 'package:ecommerce_app/Admin/Babycare/bath.dart';
-import 'package:ecommerce_app/Admin/Babycare/food.dart';
 import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+import 'package:ecommerce_app/Admin/Kitchen/accessories.dart';
+import 'package:ecommerce_app/Admin/Kitchen/crockery.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
-class babycare extends StatelessWidget {
+
+class Kitchen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () => Navigator.of(context).pop()),
         title: Text("Subcategories",style: TextStyle(fontFamily: "Breeserif",fontSize: displayWidth(context)*0.055,color: Colors.white),),
@@ -22,21 +23,20 @@ class babycare extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             ListTile(
-              //  leading: Icon(Icons.add_circle_outline),
-              title: Text("Baby Bath & Hygiene"),
+              title: Text("Crockery & Cutlery"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => bath()));
+                    context, MaterialPageRoute(builder: (context) => crockery()));
               },
             ),
             Divider(),
             ListTile(
-              title: Text("Baby Food"),
+              title: Text("Kitchen Accessories"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => food()));
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => accessories()));
               },
             ),
            
