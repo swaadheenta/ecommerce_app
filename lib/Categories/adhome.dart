@@ -1,5 +1,6 @@
 
-import 'package:ecommerce_app/Admin/adminhome.dart';
+
+import 'package:ecommerce_app/Categories/adminhome.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 

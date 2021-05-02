@@ -1,27 +1,23 @@
-import 'package:ecommerce_app/Admin/Foodgrains/Atta.dart';
-import 'package:ecommerce_app/Admin/Foodgrains/Dals.dart';
-import 'package:ecommerce_app/Admin/Foodgrains/Rice.dart';
-import 'package:ecommerce_app/Admin/Foodgrains/Salt.dart';
-import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+
+
+import 'package:ecommerce_app/Categories/Health/Energy.dart';
+import 'package:ecommerce_app/Categories/Health/Healthdrinks.dart';
+import 'package:ecommerce_app/Categories/Health/Tea.dart';
+import 'package:ecommerce_app/Categories/Health/cof.dart';
+import 'package:ecommerce_app/Categories/Health/water.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
-import 'Oils.dart';
 
-class foodgrains extends StatelessWidget {
+
+class health extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+      leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () => Navigator.of(context).pop()),
-        title: Text(
-          "Subcategories",
-          style: TextStyle(
-              fontFamily: "Breeserif",
-              fontSize: displayWidth(context) * 0.055,
-              color: Colors.white),
-        ),
+        title: Text("Subcategories",style: TextStyle(fontFamily: "Breeserif",fontSize: displayWidth(context)*0.055,color: Colors.white),),
         backgroundColor: Colors.blue,
         centerTitle: true,
       ),
@@ -29,49 +25,49 @@ class foodgrains extends StatelessWidget {
         padding: EdgeInsets.only(top: 30),
         child: ListView(
           children: <Widget>[
+          
             ListTile(
-              title: Text("Atta, Flours & Sooji"),
+              title: Text("Coffee"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Atta()));
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => cof()));
               },
             ),
             Divider(),
             ListTile(
-              title: Text("Dals & Pulses"),
+              title: Text("Energy & Soft drinks"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Dal()));
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => energy()));
               },
             ),
             Divider(),
             ListTile(
-              title: Text("Rice & Rice Products"),
+              title: Text("Water"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Rice()));
-              },
-            ),
-            Divider(),
-           
-            ListTile(
-              title: Text("Salt, Sugar & Jaggery"),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Salt()));
+                    context, MaterialPageRoute(builder: (context) => water()));
               },
             ),
             Divider(),
             ListTile(
-              title: Text("Edible Oils & Ghee"),
+              title: Text("Tea"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Oil()));
+                    context, MaterialPageRoute(builder: (context) => tea()));
+              },
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Health Drink & Supplement"),
+              trailing: Icon(Icons.arrow_right),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => healthdrinks()));
               },
             ),
            

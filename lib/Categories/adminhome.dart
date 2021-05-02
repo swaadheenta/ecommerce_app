@@ -1,13 +1,13 @@
 
-import 'package:ecommerce_app/Admin/Bakery/bakery.dart';
-import 'package:ecommerce_app/Admin/Beauty/beauty.dart';
-import 'package:ecommerce_app/Admin/Cleaning/cleaning.dart';
-import 'package:ecommerce_app/Admin/Foodgrains/foodgrains.dart';
-import 'package:ecommerce_app/Admin/Fruits/Fruits.dart';
-import 'package:ecommerce_app/Admin/Health/Health.dart';
-import 'package:ecommerce_app/Admin/Kitchen/Kitchen.dart';
 
-import 'package:ecommerce_app/Admin/Snacks/snacks.dart';
+import 'package:ecommerce_app/Categories/Bakery/bakery.dart';
+import 'package:ecommerce_app/Categories/Beauty/beauty.dart';
+import 'package:ecommerce_app/Categories/Cleaning/cleaning.dart';
+import 'package:ecommerce_app/Categories/Foodgrains/foodgrains.dart';
+import 'package:ecommerce_app/Categories/Fruits/Fruits.dart';
+import 'package:ecommerce_app/Categories/Health/Health.dart';
+import 'package:ecommerce_app/Categories/Kitchen/Kitchen.dart';
+import 'package:ecommerce_app/Categories/Snacks/snacks.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'Babycare/Babycare.dart';
 import 'package:flutter/material.dart';

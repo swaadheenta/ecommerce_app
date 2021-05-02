@@ -1,7 +1,6 @@
 
-import 'package:ecommerce_app/Admin/Babycare/bath.dart';
-import 'package:ecommerce_app/Admin/Babycare/food.dart';
-import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
+import 'package:ecommerce_app/Categories/Babycare/bath.dart';
+import 'package:ecommerce_app/Categories/Babycare/food.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 

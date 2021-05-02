@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/Admin/adhome.dart';
+
+import 'package:ecommerce_app/Categories/adhome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

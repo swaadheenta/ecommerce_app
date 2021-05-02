@@ -1,12 +1,11 @@
 
-import 'package:ecommerce_app/Admin/Fruits/Freshvegetables.dart';
-import 'package:ecommerce_app/Admin/Kitchen/accessories.dart';
-import 'package:ecommerce_app/Admin/Kitchen/crockery.dart';
+
+import 'package:ecommerce_app/Categories/Fruits/Freshfruits.dart';
+import 'package:ecommerce_app/Categories/Fruits/Freshvegetables.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
 import 'package:flutter/material.dart';
 
-
-class Kitchen extends StatelessWidget {
+class fnv extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,23 +22,28 @@ class Kitchen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text("Crockery & Cutlery"),
+              //  leading: Icon(Icons.add_circle_outline),
+              title: Text("Fresh Vegetables"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => crockery()));
+                    context, MaterialPageRoute(builder: (context) => fv()));
               },
             ),
+            
             Divider(),
             ListTile(
-              title: Text("Kitchen Accessories"),
+              // leading: Icon(Icons.add_circle),
+              title: Text("Fresh Fruits"),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
-                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => accessories()));
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ff()));
               },
             ),
+         
            
+            
           ],
         ),
       ),
