@@ -2,6 +2,7 @@
 
 import 'package:ecommerce_app/Categories/adminhome.dart';
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
+import 'package:ecommerce_app/Orders/orders.dart';
 import 'package:flutter/material.dart';
 
 class adhome extends StatefulWidget {
@@ -13,7 +14,7 @@ class _adhomeState extends State<adhome> {
   int _selectedindex = 0;
   List<Widget> widgetlist = <Widget>[
     adminhome(),
-    Text("Dashboard"),
+orders(),
   ];
 
   void onItemTap(int index) {
