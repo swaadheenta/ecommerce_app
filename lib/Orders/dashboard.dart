@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/Helpers/Devicesize.dart';
+import 'package:ecommerce_app/Orders/earnings.dart';
 import 'package:ecommerce_app/Orders/orders.dart';
 import 'package:ecommerce_app/Orders/users.dart';
 
@@ -83,13 +84,21 @@ class _dashboardState extends State<dashboard> {
                         Container(
                           width: displayWidth(context) * 0.02,
                         ),
-                        Card(
-                          elevation: 10.0,
-                          child: Container(
-                            color: Colors.white,
-                            height: displayHeight(context) * 0.215,
-                            width: displayWidth(context) * 0.45,
-                            child: Center(child: Text("No. of users")),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => earnings()));
+                          },
+                          child: Card(
+                            elevation: 10.0,
+                            child: Container(
+                              color: Colors.white,
+                              height: displayHeight(context) * 0.215,
+                              width: displayWidth(context) * 0.45,
+                              child: Center(child: Text("Earnings")),
+                            ),
                           ),
                         ),
                         Container(

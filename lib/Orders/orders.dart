@@ -14,7 +14,7 @@ class _ordersState extends State<orders> {
   Widget build(BuildContext context) {
     Widget _showorders(BuildContext context, doc) {
       print("showorders");
-      // String formattedDate = DateFormat('kk:mm:ss \n EEE d MMM').format(now);
+     
       if (doc["pending"] == true) {
         print("*");
         return Card(
@@ -87,7 +87,12 @@ class _ordersState extends State<orders> {
                         FirebaseFirestore.instance
                             .collection("Orders")
                             .doc(doc["id"])
-                            .update({"completed": true});
+                            .delete();
+
+                             FirebaseFirestore.instance
+                            .collection("Users")
+                            .doc(doc["id"]).delete();
+                            
                       });
                     })
               ],
