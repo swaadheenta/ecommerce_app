@@ -37,10 +37,7 @@ class _bathState extends State<bath> {
       index: 1,
     ),
   ];
-
- 
-
-  String dropdownValue = "Please select a category";
+String dropdownValue = "Please select a category";
 
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();

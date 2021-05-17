@@ -9,6 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+class category {
+  int index;
+  String name;
+  category({this.index, this.name});
+}
+
+String categoryname;
+
 class makeup extends StatefulWidget {
   @override
   _makeupState createState() => _makeupState();
