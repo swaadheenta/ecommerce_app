@@ -47,7 +47,19 @@ class _energyState extends State<energy> {
         appBar: AppBar(
           title: Text("Enter the details"),
           backgroundColor: Colors.blue,
-        ),
+         bottom: TabBar(
+                  tabs: [
+                    Tab(
+                      icon: Icon(Icons.event_available_sharp),
+                      text: "Add",
+                    ),
+                    Tab(
+                      icon: Icon(Icons.event_busy),
+                      text: "Delete",
+                    ),
+                  ],
+                )),
+            
         body: TabBarView(children: [
            SingleChildScrollView(
           child: Padding(
