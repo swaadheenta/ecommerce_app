@@ -331,7 +331,7 @@ class _usersState extends State<users> {
                                             child: StreamBuilder(
                                               stream: FirebaseFirestore.instance
                                                   .collection("Users")
-                                                  .doc(docname)
+                                                  .doc(docname.toString())
                                                   .collection("Products")
                                                   .snapshots(),
                                               builder: (context, snapshot) {
