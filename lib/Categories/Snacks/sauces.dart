@@ -23,6 +23,18 @@ class sauces extends StatefulWidget {
 }
 
 class _saucesState extends State<sauces> {
+  String default_choice = "Tomato ketchup & sauces";
+  int default_index = 0;
+  List<category> categorylist = [
+    category(
+      name: "Tomato ketchup & sauces",
+      index: 0,
+    ),
+    category(
+      name: "Spreads",
+      index: 2,
+    ),
+  ];
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();
@@ -40,12 +52,12 @@ class _saucesState extends State<sauces> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
-          child: Scaffold(
-        appBar: AppBar(
-          title: Text("Enter the details"),
-          backgroundColor: Colors.blue,
-         bottom: TabBar(
+        length: 2,
+        child: Scaffold(
+            appBar: AppBar(
+                title: Text("Enter the details"),
+                backgroundColor: Colors.blue,
+                bottom: TabBar(
                   tabs: [
                     Tab(
                       icon: Icon(Icons.event_available_sharp),
@@ -57,148 +69,282 @@ class _saucesState extends State<sauces> {
                     ),
                   ],
                 )),
-            
-        body: TabBarView(children: [
-           SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 50.0, left: 10.0, right: 10.0),
-            child: Container(
-              child: Column(
-                children: [
-                  Card(
-                    elevation: 7.0,
+            body: TabBarView(
+              children: [
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 20.0, left: 10.0, right: 10.0),
                     child: Container(
-                      height: displayHeight(context) * 0.075,
-                      width: displayWidth(context) * 0.95,
-                      child: DropdownButton(
-                        hint: dropdownValue == null
-                            ? Text('Please select a category')
-                            : Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
-                                child: Text(
-                                  dropdownValue,
-                                  style: TextStyle(color: Colors.blue),
-                                ),
+                      child: Column(
+                        children: [
+                          Card(
+                            elevation: 7.0,
+                            child: Container(
+                              height: displayHeight(context) * 0.075,
+                              width: displayWidth(context) * 0.95,
+                              child: DropdownButton(
+                                hint: dropdownValue == null
+                                    ? Text('Please select a category')
+                                    : Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 15.0),
+                                        child: Text(
+                                          dropdownValue,
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                      ),
+                                isExpanded: true,
+                                iconSize: 30.0,
+                                style: TextStyle(color: Colors.blue),
+                                items: [
+                                  'Tomato ketchup & sauces',
+                                  'Chilli & soya sauce',
+                                  'Spreads'
+                                ].map(
+                                  (val) {
+                                    return DropdownMenuItem<String>(
+                                      value: val,
+                                      child: Text(val),
+                                    );
+                                  },
+                                ).toList(),
+                                onChanged: (val) {
+                                  setState(
+                                    () {
+                                      dropdownValue = val;
+                                      Categoryname = val;
+                                    },
+                                  );
+                                },
                               ),
-                        isExpanded: true,
-                        iconSize: 30.0,
-                        style: TextStyle(color: Colors.blue),
-                        items: ['Tomato ketchup & sauces', 'Chilli & soya sauce','Spreads'].map(
-                          (val) {
-                            return DropdownMenuItem<String>(
-                              value: val,
-                              child: Text(val),
-                            );
-                          },
-                        ).toList(),
-                        onChanged: (val) {
-                          setState(
-                            () {
-                              dropdownValue = val;
-                              Categoryname = val;
-                            },
-                          );
-                        },
+                            ),
+                          ),
+                          TextFormField(
+                            controller: SubCategoryname,
+                            decoration: InputDecoration(
+                              hintText: "Enter the name of subcategory",
+                            ),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          TextFormField(
+                            controller: SubCategoryquantity,
+                            decoration: InputDecoration(
+                              hintText: "Enter the quantity of subcateory",
+                            ),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          TextFormField(
+                            controller: SubCategoryoldprice,
+                            decoration: InputDecoration(
+                              hintText: "Enter the old price of subcategory",
+                            ),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          TextFormField(
+                            controller: SubCategorynewprice,
+                            decoration: InputDecoration(
+                              hintText: "Enter the new price of subcategory",
+                            ),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.05,
+                          ),
+                          ButtonTheme(
+                            height: displayHeight(context) * 0.15,
+                            minWidth: displayWidth(context) * 0.32,
+                            child: OutlineButton(
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 2.5),
+                              onPressed: getImage,
+                              child: (_image != null)
+                                  ? Image(
+                                      image: AssetImage(_image.path),
+                                      filterQuality: FilterQuality.high,
+                                    )
+                                  : Icon(Icons.add, size: 30.0), //
+                            ),
+                          ),
+                          Opacity(
+                            opacity: 0.0,
+                            child: Divider(),
+                          ),
+                          Text(
+                            "Double tap on submit button",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          FlatButton(
+                              color: Colors.blue,
+                              onPressed: () {
+                                Map<String, dynamic> data = {
+                                  "name": SubCategoryname.text,
+                                  "quantity": SubCategoryquantity.text,
+                                  "oldprice": SubCategoryoldprice.text,
+                                  "newprice": SubCategorynewprice.text,
+                                  "imgname": Imgname,
+                                  "imgloc": Imgloc,
+                                };
+
+                                //FirebaseFirestore.instance.collection("test").add(data);
+                                FirebaseFirestore.instance
+                                    .collection(Categoryname)
+                                    .doc(SubCategoryname.text)
+                                    .set(data);
+                                // .collection(Categoryname.text)
+                                // .doc()
+                                //  .collection("Pulses")
+                                //  .doc(SubCategoryname.text)
+                                //  .set(data);
+                              },
+                              child: Text(
+                                "Submit",
+                                style: TextStyle(color: Colors.white),
+                              )),
+                        ],
                       ),
                     ),
                   ),
-                  TextFormField(
-                    controller: SubCategoryname,
-                    decoration: InputDecoration(
-                      hintText: "Enter the name of subcategory",
-                    ),
+                ),
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 20.0, left: 10.0, right: 10.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Select a category :-",
+                              style: TextStyle(
+                                  fontSize: displayWidth(context) * 0.055,
+                                  fontFamily: "BreeSerif",
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Container(
+                              child: Column(
+                                  children: categorylist
+                                      .map((data) => RadioListTile(
+                                            title: Text("${data.name}"),
+                                            value: data.index,
+                                            groupValue: default_index,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                default_choice = data.name;
+                                                default_index = data.index;
+                                              });
+                                            },
+                                          ))
+                                      .toList())),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          Text(
+                            "SubCategories :-",
+                            style: TextStyle(
+                                fontSize: displayWidth(context) * 0.055,
+                                fontFamily: "BreeSerif",
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            width: displayWidth(context) * 0.1,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: StreamBuilder<QuerySnapshot>(
+                                stream: FirebaseFirestore.instance
+                                    .collection(default_choice)
+                                    .snapshots(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    List<DropdownMenuItem> catlist = [];
+                                    for (int i = 0;
+                                        i < snapshot.data.docs.length;
+                                        i++) {
+                                      DocumentSnapshot ds =
+                                          snapshot.data.docs[i];
+                                      catlist.add(DropdownMenuItem(
+                                        child: Text(ds.id),
+                                        value: "${ds.id}",
+                                      ));
+                                    }
+                                    return DropdownButton(
+                                      items: catlist,
+                                      isExpanded: false,
+                                      hint: Text("Choose a subcategory"),
+                                      onChanged: (val) {
+                                        setState(() {
+                                          categoryname = val;
+                                          print(val);
+                                        });
+                                      },
+                                      // value: categoryname
+                                    );
+                                  } else {
+                                    return Container(
+                                      height: displayHeight(context) * 0.0,
+                                      width: displayWidth(context) * 0.0,
+                                    );
+                                  }
+                                }),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.035,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: displayWidth(context) * 0.1,
+                              ),
+                              RaisedButton(
+                                onPressed: () {
+                                  categoryname != null
+                                      ? FirebaseFirestore.instance
+                                          .collection(default_choice)
+                                          .doc(categoryname)
+                                          .update({"stock": false})
+                                      : print("do nothing");
+                                },
+                                child: Text(
+                                  "Out Of Stock",
+                                  //style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              SizedBox(
+                                width: displayWidth(context) * 0.2,
+                              ),
+                              RaisedButton(
+                                onPressed: () {
+                                  categoryname != null
+                                      ? FirebaseFirestore.instance
+                                          .collection(default_choice)
+                                          .doc(categoryname)
+                                          .update({"stock": true})
+                                      : print("do nothing");
+                                },
+                                child: Text(
+                                  "In Stock",
+                                  //style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          )
+                        ]),
                   ),
-                  SizedBox(
-                    height: displayHeight(context) * 0.02,
-                  ),
-                  TextFormField(
-                    controller: SubCategoryquantity,
-                    decoration: InputDecoration(
-                      hintText: "Enter the quantity of subcateory",
-                    ),
-                  ),
-                  SizedBox(
-                    height: displayHeight(context) * 0.02,
-                  ),
-                  TextFormField(
-                    controller: SubCategoryoldprice,
-                    decoration: InputDecoration(
-                      hintText: "Enter the old price of subcategory",
-                    ),
-                  ),
-                  SizedBox(
-                    height: displayHeight(context) * 0.05,
-                  ),
-                  TextFormField(
-                    controller: SubCategorynewprice,
-                    decoration: InputDecoration(
-                      hintText: "Enter the new price of subcategory",
-                    ),
-                  ),
-                  SizedBox(
-                    height: displayHeight(context) * 0.05,
-                  ),
-                 
-                  ButtonTheme(
-                    height: displayHeight(context) * 0.15,
-                    minWidth: displayWidth(context) * 0.32,
-                    child: OutlineButton(
-                      borderSide: BorderSide(color: Colors.grey, width: 2.5),
-                      onPressed: getImage,
-                      child: (_image != null)
-                          ? Image(
-                              image: AssetImage(_image.path),
-                              filterQuality: FilterQuality.high,
-                            )
-                          : Icon(Icons.add, size: 30.0), //
-                    ),
-                  ),
-                  Opacity(
-                    opacity: 0.0,
-                    child: Divider(),
-                  ),
-                  Text(
-                    "Double tap on submit button",
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  SizedBox(
-                    height: displayHeight(context) * 0.05,
-                  ),
-                  FlatButton(
-                      color: Colors.blue,
-                      onPressed: () {
-                        Map<String, dynamic> data = {
-                          "name": SubCategoryname.text,
-                          "quantity": SubCategoryquantity.text,
-                          "oldprice": SubCategoryoldprice.text,
-                          "newprice":SubCategorynewprice.text,
-                          "imgname": Imgname,
-                          "imgloc": Imgloc,
-                        };
-
-                        //FirebaseFirestore.instance.collection("test").add(data);
-                        FirebaseFirestore.instance
-                            .collection(Categoryname)
-                            .doc(SubCategoryname.text)
-                            .set(data);
-                        // .collection(Categoryname.text)
-                        // .doc()
-                        //  .collection("Pulses")
-                        //  .doc(SubCategoryname.text)
-                        //  .set(data);
-                      },
-                      child: Text(
-                        "Submit",
-                        style: TextStyle(color: Colors.white),
-                      )),
-                ],
-              ),
-            ),
-          ),
-           )
-        ],)
-       ));
-      
+                ),
+              ],
+            )));
   }
 
   final imagePicker = ImagePicker();
@@ -246,4 +392,3 @@ class _saucesState extends State<sauces> {
     Imgloc = url;
   }
 }
-

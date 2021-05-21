@@ -49,7 +49,7 @@ class adminhome extends StatelessWidget {
                 top: displayHeight(context) * 0.02,
                 left: displayWidth(context) * 0.02,
                 child: Container(
-                  height: displayHeight(context) * 0.769,
+                  height: displayHeight(context) * 0.74,
                   child: SingleChildScrollView(
                     child: Column(children: [
                       GestureDetector(

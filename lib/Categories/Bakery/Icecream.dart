@@ -24,6 +24,15 @@ class Icecream extends StatefulWidget {
 }
 
 class _IcecreamState extends State<Icecream> {
+  String default_choice = "Icecreams";
+  int default_index = 0;
+  List<category> categorylist = [
+    category(
+      name: "Icecreams",
+      index: 0,
+    ),
+   
+  ];
   TextEditingController SubCategoryname = new TextEditingController();
   TextEditingController SubCategoryoldprice = new TextEditingController();
   TextEditingController SubCategorynewprice = new TextEditingController();
@@ -59,9 +68,10 @@ class _IcecreamState extends State<Icecream> {
                   ],
                 )),
             
-        body:TabBarView(children: [   SingleChildScrollView(
+        body:TabBarView(children: [   
+          SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(top: 50.0, left: 10.0, right: 10.0),
+            padding: const EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0),
             child: Container(
               child: Column(
                 children: [
@@ -127,7 +137,7 @@ class _IcecreamState extends State<Icecream> {
                     ),
                   ),
                   SizedBox(
-                    height: displayHeight(context) * 0.05,
+                    height: displayHeight(context) * 0.02,
                   ),
                   TextFormField(
                     controller: SubCategorynewprice,
@@ -162,7 +172,7 @@ class _IcecreamState extends State<Icecream> {
                     style: TextStyle(color: Colors.red),
                   ),
                   SizedBox(
-                    height: displayHeight(context) * 0.05,
+                    height: displayHeight(context) * 0.02,
                   ),
                   FlatButton(
                       color: Colors.blue,
@@ -196,6 +206,137 @@ class _IcecreamState extends State<Icecream> {
             ),
           ),
         ),
+           SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 20.0, left: 10.0, right: 10.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Select a category :-",
+                              style: TextStyle(
+                                  fontSize: displayWidth(context) * 0.055,
+                                  fontFamily: "BreeSerif",
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Container(
+                              child: Column(
+                                  children: categorylist
+                                      .map((data) => RadioListTile(
+                                            title: Text("${data.name}"),
+                                            value: data.index,
+                                            groupValue: default_index,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                default_choice = data.name;
+                                                default_index = data.index;
+                                              });
+                                            },
+                                          ))
+                                      .toList())),
+                          SizedBox(
+                            height: displayHeight(context) * 0.02,
+                          ),
+                          Text(
+                            "SubCategories :-",
+                            style: TextStyle(
+                                fontSize: displayWidth(context) * 0.055,
+                                fontFamily: "BreeSerif",
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            width: displayWidth(context) * 0.1,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10.0),
+                            child: StreamBuilder<QuerySnapshot>(
+                                stream: FirebaseFirestore.instance
+                                    .collection(default_choice)
+                                    .snapshots(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    List<DropdownMenuItem> catlist = [];
+                                    for (int i = 0;
+                                        i < snapshot.data.docs.length;
+                                        i++) {
+                                      DocumentSnapshot ds =
+                                          snapshot.data.docs[i];
+                                      catlist.add(DropdownMenuItem(
+                                        child: Text(ds.id),
+                                        value: "${ds.id}",
+                                      ));
+                                    }
+                                    return DropdownButton(
+                                      items: catlist,
+                                      isExpanded: false,
+                                      hint: Text("Choose a subcategory"),
+                                      onChanged: (val) {
+                                        setState(() {
+                                          categoryname = val;
+                                          print(val);
+                                        });
+                                      },
+                                      // value: categoryname
+                                    );
+                                  } else {
+                                    return Container(
+                                      height: displayHeight(context) * 0.0,
+                                      width: displayWidth(context) * 0.0,
+                                    );
+                                  }
+                                }),
+                          ),
+                          SizedBox(
+                            height: displayHeight(context) * 0.035,
+                          ),
+                          Row(
+                            children: [
+                               SizedBox(
+                                 width: displayWidth(context)*0.1,
+                                ),
+                             RaisedButton(
+                                  onPressed: () {
+                                    categoryname != null
+                                        ? FirebaseFirestore.instance
+                                            .collection(default_choice)
+                                            .doc(categoryname)
+                                            .update({"stock": false})
+                                        : print("do nothing");
+                                  },
+                                  child: Text(
+                                    "Out Of Stock",
+                                    //style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                SizedBox(
+                                 width: displayWidth(context)*0.2,
+                                ),
+                                RaisedButton(
+                                  onPressed: () {
+                                    categoryname != null
+                                        ? FirebaseFirestore.instance
+                                            .collection(default_choice)
+                                            .doc(categoryname)
+                                            .update({"stock": true})
+                                        : print("do nothing");
+                                  },
+                                  child: Text(
+                                    "In Stock",
+                                    //style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                             
+                            ],
+                          )
+                        ]),
+                  ),
+                ),
+              
       ],)
       ),
     );

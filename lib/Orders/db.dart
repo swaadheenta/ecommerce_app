@@ -61,6 +61,7 @@ class _dashbState extends State<dashb> {
               },
               child: Card(
                 elevation: 10.0,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 child: Container(
                   height: displayHeight(context) * 0.2,
                   width: displayWidth(context) * 0.9,
@@ -106,6 +107,7 @@ class _dashbState extends State<dashb> {
               },
               child: Card(
                 elevation: 10.0,
+                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 child: Container(
                   height: displayHeight(context) * 0.2,
                   width: displayWidth(context) * 0.9,
