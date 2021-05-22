@@ -17,7 +17,6 @@ class _usersState extends State<users> {
   String docname;
   bool pressed = false;
   Widget build(BuildContext context) {
-  
     Future gettotal() async {
       QuerySnapshot ds =
           await FirebaseFirestore.instance.collection("Admin").get();
@@ -90,7 +89,6 @@ class _usersState extends State<users> {
                               .doc("geIBRDPL0s05gf3BM6Fn")
                               .update({
                             "total": total + doc["totalprice"],
-                           
                           });
                         });
                       },
@@ -276,41 +274,7 @@ class _usersState extends State<users> {
                                       // card displaying gender
                                       Divider(),
 
-                                      //card displaying address !!
-                                      Card(
-                                        elevation: 10.0,
-                                        child: Container(
-                                          height:
-                                              displayHeight(context) * 0.135,
-                                          width: displayWidth(context) * 0.9,
-                                          child: Stack(children: [
-                                            Positioned(
-                                                left: displayWidth(context) *
-                                                    0.05,
-                                                top: displayHeight(context) *
-                                                    0.025,
-                                                child: Text(
-                                                  "Gender:",
-                                                  style: TextStyle(
-                                                      fontSize: displayWidth(
-                                                              context) *
-                                                          0.045),
-                                                )),
-                                            Positioned(
-                                                right: displayWidth(context) *
-                                                    0.05,
-                                                top: displayHeight(context) *
-                                                    0.025,
-                                                child: Text(
-                                                  ds["gender"],
-                                                  style: TextStyle(
-                                                      fontSize: displayWidth(
-                                                              context) *
-                                                          0.045),
-                                                )),
-                                          ]),
-                                        ),
-                                      ),
+                                     
                                     ]),
 
                                     //Product details :-
@@ -349,8 +313,14 @@ class _usersState extends State<users> {
                                                         );
                                                       });
                                                 } else {
-                                                  return Text(
-                                                      "Please check your internet connection!!");
+                                                  return Container(
+                                                    height:
+                                                        displayHeight(context) *
+                                                            0.0,
+                                                    width:
+                                                        displayWidth(context) *
+                                                            0.0,
+                                                  );
                                                 }
                                               },
                                             ),
