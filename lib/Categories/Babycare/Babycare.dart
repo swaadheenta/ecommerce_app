@@ -13,7 +13,7 @@ class babycare extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () => Navigator.of(context).pop()),
         title: Text("Subcategories",style: TextStyle(fontFamily: "Breeserif",fontSize: displayWidth(context)*0.055,color: Colors.white),),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         centerTitle: true,
       ),
       body: Padding(
